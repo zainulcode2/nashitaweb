@@ -1,0 +1,44 @@
+[
+  {
+      "nama": "Produk1",
+      "deskripsi": "deskripsi",
+      "gambar": "assets/produk1.png",
+      "link": "#",
+      "price": "100000"
+  },
+  {
+      "nama": "Produk2",
+      "deskripsi": "deskripsi",
+      "gambar": "assets/produk1.png",
+      "link": "#",
+      "price": "200000"
+  },
+  {
+      "nama": "Produk3",
+      "deskripsi": "deskripsi",
+      "gambar": "assets/produk1.png",
+      "link": "#",
+      "price": "50000"
+  },
+  {
+    "nama": "Produk1",
+    "deskripsi": "deskripsi",
+    "gambar": "assets/produk1.png",
+    "link": "#",
+    "price": "100000"
+},
+{
+    "nama": "Produk2",
+    "deskripsi": "deskripsi",
+    "gambar": "assets/produk1.png",
+    "link": "#",
+    "price": "200000"
+},
+{
+    "nama": "Produk3",
+    "deskripsi": "deskripsi",
+    "gambar": "assets/produk1.png",
+    "link": "#",
+    "price": "50000"
+}
+]

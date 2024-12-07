@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Katalog Produk Material" />
+        <meta name="author" content="Your Company" />
+        <title>Katalog Produk Material</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Nashita Store</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">Tentang Kami</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Header-->
+            <header class="py-5 bg-light">
+                <div class="container px-5 pb-5">
+                    <div class="row gx-5 align-items-center">
+                        <div class="col-xxl-6">
+                            <div class="text-center text-xxl-start">
+                                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Katalog Produk Material</span></h1>
+                                <p class="lead fw-normal text-muted mb-4">Temukan berbagai jenis material berkualitas untuk kebutuhan proyek Anda.</p>
+                                <a class="btn btn-primary btn-lg px-5 py-3" href="#produk">Lihat Produk</a>
+                            </div>
+                        </div>
+                        <div class="col-xxl-6 text-center">
+                            <img class="img-fluid" src="assets/materials-header.jpg" alt="Produk Material" />
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Produk Section-->
+            <section id="produk" class="py-5">
+                <div class="container px-5">
+                    <h2 class="display-5 fw-bolder text-center mb-5">Produk Kami</h2>
+                    <div class="row gx-5" id="produk-container">
+                        <!-- Produk akan ditambahkan di sini oleh JavaScript -->
+                    </div>
+                </div>
+            </section>
+            <!-- About Section-->
+            <section id="about" class="bg-light py-5">
+                <div class="container px-5">
+                    <h2 class="display-5 fw-bolder text-center mb-5">Tentang Kami</h2>
+                    <p class="text-muted text-center">Kami menyediakan berbagai material berkualitas untuk kebutuhan konstruksi dan renovasi Anda. Dengan pengalaman bertahun-tahun, kami siap menjadi mitra terbaik Anda.</p>
+                </div>
+            </section>
+            <!-- Contact Section-->
+            <section id="contact" class="py-5">
+                <div class="container px-5">
+                    <h2 class="display-5 fw-bolder text-center mb-5">Hubungi Kami</h2>
+                    <p class="text-center">Email: info@nashitastore.com | Telepon: 0812-3456-7890</p>
+                </div>
+            </section>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5 text-center">
+                <small>&copy; Nashita Store 2024. All Rights Reserved.</small>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+
+        <!-- JavaScript untuk memuat produk dari JSON -->
+        <script>
+            // Fungsi untuk memuat dan menampilkan produk dari file JSON
+            fetch('produk.json')
+                .then(response => response.json())  // Mengambil dan mengonversi JSON
+                .then(data => {
+                    const produkContainer = document.getElementById('produk-container');
+                    data.forEach(produk => {
+                        // Membuat elemen card untuk setiap produk
+                        const card = document.createElement('div');
+                        card.classList.add('col-lg-4', 'col-md-6', 'mb-5');
+                        card.innerHTML = `
+                            <div class="card h-100">
+                                <img class="card-img-top" src="${produk.gambar}" alt="${produk.nama}" />
+                                <div class="card-body">
+                                    <h5 class="card-title">${produk.nama}</h5>
+                                    <p class="card-text">${produk.deskripsi}</p>
+                                    <p class="card-price">Price: Rp ${produk.price}</p> <!-- Menambahkan harga produk -->
+                                    <a href="https://wa.me/6283869691834?text=Hallo%20dengan%20nashita%20store%20saya%20tertarik%20dengan%20produk%20${encodeURIComponent(produk.nama)}%20dengan%20harga%20${encodeURIComponent(produk.harga)}" target="_blank" class="btn btn-success">
+                                     <i class="bi bi-whatsapp"></i> WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                        produkContainer.appendChild(card); // Menambahkan card ke container
+                    });
+                })
+                .catch(error => console.error('Error loading JSON:', error));
+        </script>
+        
+    </body>
+</html>
